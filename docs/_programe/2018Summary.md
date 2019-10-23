@@ -1,6 +1,6 @@
 ---
 date: 2019-10-23 19:00
-author: xiaoping
+author: xiaop1ng
 location: ShenZhen
 title: 2018's Summary
 tags:
