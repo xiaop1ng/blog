@@ -1,24 +1,94 @@
 module.exports = {
-    theme: 'reco',
+    title: 'xiaop1ng',
+    description: 'write and think.',
+    theme: '@vuepress/blog',
     themeConfig: {
-        // 博客设置
-        blogConfig: {
-            category: {
-                location: 2, // 在导航栏菜单中所占的位置，默认2
-                text: 'Category' // 默认文案 “分类”
+        smoothScroll: true, // 页面滚动效果
+        sidebar: 'auto', // 自动侧边栏
+        sidebarDepth: 2,   // 设置嵌套的标题链接深度
+        lastUpdated: 'Last Updated',   // 最后更新时间
+        nav: [ // 导航栏
+            {
+                text: '编程',
+                link: '/',
             },
-            tag: {
-                location: 3, // 在导航栏菜单中所占的位置，默认3
-                text: 'Tag' // 默认文案 “标签”
+            {
+                text: '文集',
+                link: '/post/',
             },
-            // author
-            author: 'xiaoping'
-        },
-        nav: [
-            { text: 'TimeLine', link: '/timeLine/', icon: 'reco-date' }
-        ]
+            {
+                text: '标签',
+                link: '/tag/',
+            },
+            {
+                text: 'About',
+                link: '/me',
+            },
+            {
+                text: 'Github',
+                link: 'https://github.com/xiaop1ng',
+            }
+        ],
+        footer: { // 网站底部
+            contact: [
+                {
+                    type: 'github',
+                    link: 'https://github.com/xiaop1ng',
+                }
+            ],
+            copyright: [
+                {
+                    text: 'Privacy Policy',
+                    link: 'https://policies.google.com/privacy?hl=en-US',
+                },
+                {
+                    text: 'Copyright xiaop1ng © 2019',
+                    link: 'javascript:;',
+                },
+            ],
+        }
     },
     head: [
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
-    ]
+    ],
+    markdown: { // 为每个代码块显示行号
+    	lineNumbers: true
+  	},
+    plugins: [
+        [
+            '@vuepress/blog',
+            {
+                directories: [ // 分类器
+                    {
+                        // 杂文
+                        id: 'post',
+                        dirname: '_posts',
+                        path: '/post/',
+                        itemPermalink: '/post/:year/:month/:day/:slug',
+                    },
+                    {
+                        // 编程
+                        id: 'programe',
+                        dirname: '_programe',
+                        path: '/',
+                    },
+                ],
+                frontmatters: [ // 标签
+                    {
+                        // Unique ID of current classification
+                        id: 'tag',
+                        // Decide that the frontmatter keys will be grouped under this classification
+                        keys: ['tag', 'tags'],
+                        // Path of the `entry page` (or `list page`)
+                        path: '/tag/',
+                        // Layout of the `entry page`
+                        layout: 'Tags',
+                        // Layout of the `scope page`
+                        scopeLayout: 'Tag'
+                    },
+                ],
+            },
+        ],
+    ],
+
 }
