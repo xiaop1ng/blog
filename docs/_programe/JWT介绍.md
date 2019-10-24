@@ -3,6 +3,7 @@ date: 2019-08-01 11:28
 author: xiaop1ng
 location: ShenZhen
 title: JWT ( JSON WEB TOKENS) 介绍
+summary: JSON WEB TOKEN 它是一个很长的字符串，中间用点（`.`）分割成三部分：Header（头部）| Payload（负载）| Signature（签名）
 tags:
   - JWT
 ---
