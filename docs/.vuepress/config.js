@@ -89,6 +89,7 @@ module.exports = {
                 ],
             },
         ],
+        '@vuepress/last-updated', '@vuepress/back-to-top'
     ],
 
 }
