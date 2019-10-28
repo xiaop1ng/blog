@@ -43,7 +43,7 @@ module.exports = {
                 },
                 {
                     text: 'Copyright xiaop1ng © 2019',
-                    link: 'javascript:;',
+                    link: '/',
                 },
             ],
         }
