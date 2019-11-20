@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'xiaop1ng',
+    title: 'p',
     description: 'write and think.',
     theme: '@vuepress/blog',
     themeConfig: {
