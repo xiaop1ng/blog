@@ -1,5 +1,5 @@
 ---
-date: 2018-04-11 11:28
+date: 2018-04-11 11:00
 author: xiaop1ng
 location: ShenZhen
 title: SpringBoot 开箱使用 (一)
@@ -10,12 +10,14 @@ tags:
 # SpringBoot 开箱使用 (一)
 
 Spring Boot 是一个崭新的令人兴奋的项目，它以 Spring 的视角，致力于简化 Spring 本身。
+
 ## Spring Boot 是什么？
 Spring Boot 的目的是提供一组工具，以便快速构建容易配置的 Spring 应用程序。
 Spring Boot 支持约定而非配置，旨在让您尽快启动并运行。
 我所理解的 Spring Boot 是 Sping 家族的一个大合集，可以让我们更容易的构建 Spring 程序（更少的 XML 配置）
 
 [Spring 官网](http://projects.spring.io/spring-boot) 这样介绍 SpringBoot
+
 > Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.
 
 这一切听起来很不错，对吧？ 
@@ -29,12 +31,15 @@ Spring Boot 拥有观点。换句话说，Spring Boot 拥有合理的默认值�
 ## 其次，它可以自定义
 如果无法改变其想法，具有主见的框架就不是很好的框架。您可以根据自己的喜好轻松地自定义 Spring Boot 应用程序，无论是在进行初始配置时还是在开发周期的后期阶段。
 
-例如，如果喜欢 Maven，可以轻松地在 POM 文件中更改 <dependency> 来替换 Spring Boot 默认值。
+例如，如果喜欢 Maven，可以轻松地在 POM 文件中更改 `<dependency>` 来替换 Spring Boot 默认值。
 
 ## Quick Start
-这里还是使用我们熟知的 Maven 来构建项目，还不清楚 Maven 的使用可以先学习一下 [Maven的使用](https://blog.csdn.net/xiaoping0915/article/details/60780058)
-Step 1：在新建项目的 pom 文件中添加
-```
+
+使用 Maven 来构建项目
+
+**Step 1**：在新建项目的 pom 文件中添加
+
+```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -47,8 +52,9 @@ Step 1：在新建项目的 pom 文件中添加
     </dependency>
 </dependencies>
 ```
-Step 2: 在我们的项目下创建一个 Java 文件 Example.java
-```
+**Step 2**: 在我们的项目下创建一个 Java 文件 Example.java
+
+```java
 /**
  * `@EnableAutoConfiguration`
  * 这个注解告诉Spring Boot根据添加的jar依赖猜测你想如何配置Spring。
@@ -72,6 +78,7 @@ public class Example {
     }
 }
 ```
+
 这时程序可以启动了。你应该会看到：
 ```
   .   ____          _            __ _ _
@@ -84,9 +91,11 @@ public class Example {
 ```
 
 使用浏览器访问 127.0.0.1:8080 ,我们应该会看到
+
 > SpringBoot is run
+
 ## 开发者工具
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-devtools</artifactId>
@@ -94,4 +103,5 @@ public class Example {
 </dependency>
 ```
 ## 自动重启
+
 如果应用使用 spring-boot-devtools ，则只要 classpath 下的文件有变动，它就会自动重启。这在使用 IDE 时非常有用，因为可以很快得到代码改变的反馈。默认情况下，classpath 下任何指向文件夹的实体都会被监控

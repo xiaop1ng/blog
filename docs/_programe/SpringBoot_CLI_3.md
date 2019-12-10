@@ -27,7 +27,7 @@ http://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.0.1.REL
 然后我们写一段 Java 程序测试一下
 
 - Hello.java
-```
+```java
 @RestController
 public class Hello {
     @RequestMapping("/hello")
@@ -38,7 +38,8 @@ public class Hello {
 ```
 将 `cmd` 程序切换至 `Hello.java` 文件所在目录下执行 `spring run Hello.java`
 
-![CLI](https://img-blog.csdn.net/20180803141650624?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9waW5nMDkxNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://i.loli.net/2019/12/10/h68bpEuskmZGiP1.png)
+
 SpringBoot CLI 在这时会构建并启动程序，启动完成后，访问 http://127.0.0.1:8080/hello
 
 > Hello, Cli

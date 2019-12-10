@@ -24,11 +24,12 @@ SpringBoot 不仅优雅而且强大（漂亮得不像实力派，是吧？）
 DB 能力，数据库连接使用 MySQL， 持久化层使用灵活的 MyBatis，数据库连接池使用阿里的 druid；还有部分第三方工具包就不在此赘述了。
 
 ## 结构
-![项目结构](https://img-blog.csdn.net/20180412141735786?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9waW5nMDkxNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://i.loli.net/2019/12/10/wk9quGeHDVa8Sb2.png)
+
 
 ## 部分代码
  - pom.xml
-```
+```xml
 		<!-- 模板引擎 FreeMarker -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -89,7 +90,7 @@ DB 能力，数据库连接使用 MySQL， 持久化层使用灵活的 MyBatis�
 ```
 
 - App.java
-```
+```java
 @SpringBootApplication
 //扫描 mybatis mapper 包路径,注意需要修改成你自己的包路径
 @MapperScan(basePackages = "com.xiaoping.mapper")
@@ -126,7 +127,7 @@ spring.mvc.static-path-pattern=/public/**
 ```
 
 - WebExceptionHandler.java
-```
+```java
 // 由于我们这里捕获的是 Exception ，只要服务端发生异常，程序会统一在此处理
 @ControllerAdvice
 public class WebExceptionHandler {
@@ -145,7 +146,9 @@ public class WebExceptionHandler {
 
 ## Run
 当你访问 `127.0.0.1:8080` 或 `127.0.0.1:8080/index` 亦或是 `127.0.0.1:8080/index.html` 时，应该会看到：
-![这里写图片描述](https://img-blog.csdn.net/20180412143347168?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9waW5nMDkxNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+![](https://i.loli.net/2019/12/10/STaxvAwIENXe2Bh.png)
+
 
 ## 源码地址
 

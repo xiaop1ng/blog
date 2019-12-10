@@ -16,7 +16,7 @@ SpringBoot actuator 是一个对应用运行状态监视的工具，actuator 为
 
 首先在我们的 SpringBoot 应用中添加上 `actuator` 的依赖
 
-```
+```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-actuator</artifactId>
@@ -26,7 +26,7 @@ SpringBoot actuator 是一个对应用运行状态监视的工具，actuator 为
 相关配置：
 - application.yml
 
-```
+```yml
 # info 配置项（/actuator/info）
 info:
   author: xiaop1ng
@@ -45,7 +45,7 @@ management:
 ```
 
 启动 SpringBoot 应用程序后访问路由 `/actuator/info`
-```
+```json
 // http://127.0.0.1:3000/actuator/info
 
 {
@@ -71,4 +71,5 @@ management:
 
 ## 其他
 `actuator` 为我们提供了 API 的方式来监控各个端点的实时信息，[Spring Boot Admin](https://github.com/codecentric/spring-boot-admin) 为我们提供一套 web 可视化页面来查看端点信息，感兴趣的可以研究研究，附一张图。
-![sba](https://img-blog.csdn.net/20180803154916874?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9waW5nMDkxNQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+
+![](https://i.loli.net/2019/12/10/QUqzd2wNlZI3xHX.png)
