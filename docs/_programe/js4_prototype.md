@@ -23,7 +23,7 @@ tags:
 ## 例子
 
  
-```
+```js
 // classA 的构造器
 function classA(numberA) {
     this.numberA = numberA;
@@ -58,7 +58,7 @@ console.log( objRefA.constructor.staticVal ); // static value
  说到继承，还是先聊一聊强类型语言 Java 中的实现，在 Java 中子类中使用 extends 关键字即可实现。子类中可以访问基类对子类开放的成员 (  `public` 、 `protected`  ) 
 
  
-```
+```js
 // 基类
 function baseClass() {
     this.key = "base";

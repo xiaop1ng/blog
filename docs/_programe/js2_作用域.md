@@ -21,7 +21,7 @@ Javascript 语言特有的”链式作用域”结构（chain scope）
  **需要注意的是在 JavaScript 中，区域块（ `if`  、 `for` 、 `while` 、 `switch` 、 `try` ）内的变量是可以在区域块外部访问的。**
 
  
-```
+```js
 try {
     var value1 = "from try block"
 }catch(e) {
@@ -54,7 +54,7 @@ console.log("value3: " + value3); // Uncaught ReferenceError: value3 is not defi
  局部变量，包括  `window`  对象可以覆盖全局变量和函数。
 
  
-```
+```js
 foo = "hello";
 
 console.log(window.foo == foo); // true;
@@ -68,7 +68,7 @@ console.log(window.foo == foo); // true;
  
 ## 一图胜千言
 
- ![这里写图片描述](https://img-blog.csdn.net/20180118233921459?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3BpbmcwOTE1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![20180118233921459.png](https://i.loli.net/2019/12/10/YO2xdI9iWQ1B7mA.png)
 
  这里的全局作用域是直接在  `<script></script>`  里、即 v1 、v2 的值会在  `window`  对象下，内层作用域可以访问外层的作用域，但是内层作用域里的值会被围墙围起来不让外层作用域访问。
 

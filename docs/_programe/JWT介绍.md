@@ -84,7 +84,7 @@ jti (JWT ID)：编号
 
 这个私钥用来计算签名，使用 Header 中指定的算法（默认 HMAC SHA256 ）来产生签名。
 
-```
+```java
 String signature = HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
@@ -99,7 +99,7 @@ String signature = HMACSHA256(
 
 通常我们会将 token 存放在 HTTP 请求头的 `Authorization` 中
 
-```
+```html
 Authorization: Bearer <token>
 ```
 

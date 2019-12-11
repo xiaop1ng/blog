@@ -84,7 +84,7 @@ tags:
 
 当访问这个登录接口成功后，响应头中就会有了 `Authorization` 字段了。
 
-![jwt](https://img-blog.csdnimg.cn/20190802111646425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9waW5nMDkxNQ==,size_16,color_FFFFFF,t_70)
+![20190802111646425.png](https://i.loli.net/2019/12/10/lxLjQHZOVbTdMh2.png)
 
 ## 验证 token
 

@@ -37,7 +37,9 @@ Lua 源码，这里可以去 [www.lua.org](https://www.lua.org/) 官网上获取
 
 首先我们找到 VS2015 开发人员命令提示打开它
 
-![这里写图片描述](https://img-blog.csdn.net/20170708143923399?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3BpbmcwOTE1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://p-1251746955.cos.ap-shenzhen-fsi.myqcloud.com/20170708143923399.png)
+
+
 
 然后切换至刚刚我们解压缩出来的 Lua 下的 src 文件夹下，我这里将 lua-5.3.4 文件夹名字改为了 lua
  
@@ -55,15 +57,17 @@ link /OUT:lua.exe lua.o lua5.3.4.lib
 lib /OUT:lua5.3.4-static.lib *.obj  
 link /OUT:luac.exe luac.o lua5.3.4-static.lib 
 ```
- ![这里写图片描述](https://img-blog.csdn.net/20170708145019810?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3BpbmcwOTE1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://p-1251746955.cos.ap-shenzhen-fsi.myqcloud.com/20170708145019810.png)
+
 
  这时我们可以去查看 lua 源包下的 src 目录
 
- ![这里写图片描述](https://img-blog.csdn.net/20170708145149594?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3BpbmcwOTE1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://p-1251746955.cos.ap-shenzhen-fsi.myqcloud.com/20170708145149594.png)
+
 
  这表明编译 Lua 源码工程已完成，此时我们将 C:\lua\src; 配置到 Path 环境变量下即可愉快的使用 lua 命令了。
 
- ![这里写图片描述](https://img-blog.csdn.net/20170708145351382?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3BpbmcwOTE1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![](https://p-1251746955.cos.ap-shenzhen-fsi.myqcloud.com/20170708145351382.png)
 
  
 ## 参考文章

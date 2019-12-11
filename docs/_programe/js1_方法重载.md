@@ -30,7 +30,7 @@ tags:
 ### 实验一 —— 使用这个方法的参数伪数组写一个任意个参数求和
 
  
-```
+```js
 // 接受多个参数求和的方法
 var addAll = function() {
     var sum = 0;
@@ -53,7 +53,7 @@ console.log("result2: " + result2);
 
  typeof **typeof obj == “object”** 构造函数属性：constructor 属性 **str.constructor == Array**
 
- ![这里写图片描述](https://img-blog.csdn.net/20180115205725962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveGlhb3BpbmcwOTE1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+![20180115205725962.png](https://i.loli.net/2019/12/10/YZoJLzBAQcG9tvO.png)
 
  
 ### 实验二 —— 检查参数类型
@@ -63,7 +63,7 @@ console.log("result2: " + result2);
  每次都这样去检查参数类型很累，当然我们可以写一个通用一点的检查参数的方法，来确保我们函数的输入。
 
  
-```
+```js
 // 严格检查参数列表
 // args: types Array 检查参数的类型数组
 //       args Array 方法中的 arguments
@@ -100,7 +100,7 @@ addTwo(3, 4, 5); // 输出 Uncaught 参数数量异常：类型数量：2，参�
 ### 实验三 —— 方法的重载为你推荐歌曲
 
  
-```java
+```js
 // 根据不同的参数推荐不同的歌曲
 var playSomething = function() {
     if(arguments.length == 1) {
