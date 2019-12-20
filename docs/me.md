@@ -2,12 +2,20 @@
 
 ## 联系方式
 
-- email: jianchaoping@gmail.com
 
-- GitHub: [https://github.com/xiaop1ng](https://github.com/xiaop1ng)
+```js
+{
+    Name: '简超平',
+    
+    Email: 'jianchaoping@gmail.com',
 
-- 之前的博客: [https://blog.csdn.net/xiaoping0915](https://blog.csdn.net/xiaoping0915)
+    WeChat: 'eGlhb3AxbmczMzAx', // Base64 Encode
 
+    GitHub: 'https://github.com/xiaop1ng',
+
+    CsdnBlog: 'https://blog.csdn.net/xiaoping0915'
+}
+```
 
 ## 小时候
 

@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'p',
+    title: 'blog',
     description: '简超平的部落格',
     theme: '@vuepress/blog',
     themeConfig: {
@@ -25,7 +25,7 @@ module.exports = {
                 link: '/me',
             },
             {
-                text: 'Github',
+                text: 'GitHub',
                 link: 'https://github.com/xiaop1ng',
             }
         ],
@@ -42,7 +42,7 @@ module.exports = {
                     link: 'https://policies.google.com/privacy?hl=en-US',
                 },
                 {
-                    text: 'Copyright xiaop1ng © 2019',
+                    text: 'Copyright xiaop1ng © 2015 - ' + new Date().getFullYear(),
                     link: '/',
                 },
             ],
