@@ -142,7 +142,8 @@ public class WebExceptionHandler {
 	}
 }
 ```
-![jwt](https://img-blog.csdnimg.cn/20190802111717517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpYW9waW5nMDkxNQ==,size_16,color_FFFFFF,t_70)
+![jwt](https://i.loli.net/2019/12/20/bRru6ehIN9MF52i.png)
+
 
 
 验证用户 token 是一个公用的步骤，所以这一 部分的代码应该写到拦截器中，这里为了方便看代码直接写到业务方法中了。在代码厂库中的实现方式是写在拦截器中的，感兴趣的童靴可以看一下：

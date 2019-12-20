@@ -20,7 +20,7 @@ tags:
 eyJhbGciOiJIUzEiLCJ0eXAiOiJKV1QifQ.eyJ1c2VySWQiOjI1Njk0LCJyb2xlSWQiOjAsInVzZXJuYW1lIjoic3R1NCIsImV4cCI6MTU2MzM1MTUzNS40Mjh9.bG9naWptQ2d5Ni9kckhWeXhaSWtwc2hmOFRjPQ
 ```
 
-![jwt](https://img-blog.csdnimg.cn/20190801133459612.png)
+![jwt](https://i.loli.net/2019/12/20/uj86V2nqAXhdST9.png)
 
 JSON WEB TOKEN 它是一个很长的字符串，中间用点（`.`）分割成三部分：
 

@@ -72,8 +72,6 @@ link /OUT:luac.exe luac.o lua5.3.4-static.lib
  
 ## 参考文章
  
-- [http://blog.csdn.net/mycwq/article/details/52318908](http://blog.csdn.net/mycwq/article/details/52318908)
-
 - [http://www.imooc.com/article/4435](http://www.imooc.com/article/4435)
    
   
