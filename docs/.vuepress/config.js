@@ -91,7 +91,6 @@ module.exports = {
         ],
         '@vuepress/last-updated', 
         '@vuepress/back-to-top',
-        '@vuepress/active-header-links',
         '@vuepress/nprogress'
     ],
 
