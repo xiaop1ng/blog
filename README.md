@@ -2,6 +2,10 @@
 
 使用 `vuepress` 搭建的博客
 
+## install
+
+> npm i # or yarn install
+
 ## Start
 
 > npm run dev
