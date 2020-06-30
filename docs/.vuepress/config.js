@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'blog',
+    title: '❤',
     description: '简超平的部落格',
     theme: '@vuepress/blog',
     themeConfig: {
