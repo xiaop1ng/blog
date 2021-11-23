@@ -83,7 +83,7 @@ public class Server {
     private static Server webServer = null;
 
     public static Server getInstance() {
-        return webServer==null?new Server():webServer;
+        return webServer==null?webServer=new Server():webServer;
     }
 
     public void listen() {
@@ -120,9 +120,9 @@ public class Server {
                 Method routerMethod = routerMap.get(uri);
                 // 这里如果请求能和我们的路由匹配上，则不会返回静态资源
                 if(null != routerMethod) { // 能匹配到相应的方法来处理该请求
-                        routerMethod.invoke(ctxMap.get(uri).getDeclaredConstructor().newInstance(), req, res);
+                    routerMethod.invoke(ctxMap.get(uri).getDeclaredConstructor().newInstance(), req, res);
                 }else { // 尝试返回静态资源
-                        res.sendStaticResource();
+                    res.sendStaticResource();
                 }
                 // TODO: 设置一个 Timeout 时长
                 // 关闭 socket 对象
@@ -385,26 +385,26 @@ public class Response {
     private String contenType = "text/html";
 
     static {
-            if(statusMap == null) {
-                statusMap = new HashMap<>();
-                statusMap.put(101, "HTTP/1.1 101 Switching Protocols\r\n");
-                statusMap.put(200, "HTTP/1.1 200 OK\r\n");
-                statusMap.put(201, "HTTP/1.1 201 Created\r\n");
-                statusMap.put(202, "HTTP/1.1 202 Accepted\r\n");
-                statusMap.put(204, "HTTP/1.1 204 No Content\r\n");
-                statusMap.put(300, "HTTP/1.1 300 Multiple Choices\r\n");
-                statusMap.put(301, "HTTP/1.1 301 Moved Permanently\r\n");
-                statusMap.put(302, "HTTP/1.1 302 Moved Temporarily\r\n");
-                statusMap.put(304, "HTTP/1.1 304 Not Modified\r\n");
-                statusMap.put(400, "HTTP/1.1 400 Bad Request\r\n");
-                statusMap.put(401, "HTTP/1.1 401 Unauthorized\r\n");
-                statusMap.put(403, "HTTP/1.1 403 Forbidden\r\n");
-                statusMap.put(404, "HTTP/1.1 404 Not Found\r\n");
-                statusMap.put(500, "HTTP/1.1 500 Internal Server Error\r\n");
-                statusMap.put(501, "HTTP/1.1 501 Not Implemented\r\n");
-                statusMap.put(502, "HTTP/1.1 502 Bad Gateway\r\n");
-                statusMap.put(503, "HTTP/1.1 503 Service Unavailable\r\n");
-            }
+        if(statusMap == null) {
+            statusMap = new HashMap<>();
+            statusMap.put(101, "HTTP/1.1 101 Switching Protocols\r\n");
+            statusMap.put(200, "HTTP/1.1 200 OK\r\n");
+            statusMap.put(201, "HTTP/1.1 201 Created\r\n");
+            statusMap.put(202, "HTTP/1.1 202 Accepted\r\n");
+            statusMap.put(204, "HTTP/1.1 204 No Content\r\n");
+            statusMap.put(300, "HTTP/1.1 300 Multiple Choices\r\n");
+            statusMap.put(301, "HTTP/1.1 301 Moved Permanently\r\n");
+            statusMap.put(302, "HTTP/1.1 302 Moved Temporarily\r\n");
+            statusMap.put(304, "HTTP/1.1 304 Not Modified\r\n");
+            statusMap.put(400, "HTTP/1.1 400 Bad Request\r\n");
+            statusMap.put(401, "HTTP/1.1 401 Unauthorized\r\n");
+            statusMap.put(403, "HTTP/1.1 403 Forbidden\r\n");
+            statusMap.put(404, "HTTP/1.1 404 Not Found\r\n");
+            statusMap.put(500, "HTTP/1.1 500 Internal Server Error\r\n");
+            statusMap.put(501, "HTTP/1.1 501 Not Implemented\r\n");
+            statusMap.put(502, "HTTP/1.1 502 Bad Gateway\r\n");
+            statusMap.put(503, "HTTP/1.1 503 Service Unavailable\r\n");
+        }
     }
 
     public Response(OutputStream output) {
@@ -425,8 +425,8 @@ public class Response {
      * @param mimeType
      */
     public void setContenType (String mimeType) {
-            this.contenType = mimeType;
-            setHeader("Content-Type", mimeType + ";charset=" + this.charset);
+        this.contenType = mimeType;
+        setHeader("Content-Type", mimeType + ";charset=" + this.charset);
     }
 
     /**
@@ -444,12 +444,12 @@ public class Response {
      * @throws IOException
      */
     public void setContent(File file) throws IOException {
-            this.contenType = Files.probeContentType( Paths.get(file.getName()) );
-            setHeader("Content-Length", String.valueOf( file.length() ));
+        this.contenType = Files.probeContentType( Paths.get(file.getName()) );
+        setHeader("Content-Length", String.valueOf( file.length() ));
     }
 
     public void setContent(String content) {
-            setHeader("Content-Length", String.valueOf( content.length() ));
+        setHeader("Content-Length", String.valueOf( content.length() ));
     }
 
     /**
@@ -458,7 +458,7 @@ public class Response {
      * @param val
      */
     public void setHeader(String key, String val) {
-            this.headers.put(key, val);
+        this.headers.put(key, val);
     }
 
     public void setRequest(Request request) {
@@ -470,12 +470,12 @@ public class Response {
      * @return
      */
     private String getStatusString() {
-            return Response.statusMap.get(this.status) == null? Response.statusMap.get(500) : Response.statusMap.get(this.status);
+        return Response.statusMap.get(this.status) == null? Response.statusMap.get(500) : Response.statusMap.get(this.status);
     }
 
     private String getStatusString(int status) {
-            this.status = status;
-            return getStatusString();
+        this.status = status;
+        return getStatusString();
     }
 
     /**
@@ -483,14 +483,14 @@ public class Response {
      * @return
      */
     private byte[] getResponseHeaderBytes() {
-            String headerString = "";
-            for (String key: headers.keySet()) {
-                if(null != key && null != headers.get(key)) {
-                    headerString += key + ": " + headers.get(key) + "\r\n";
-                }
+        String headerString = "";
+        for (String key: headers.keySet()) {
+            if(null != key && null != headers.get(key)) {
+                headerString += key + ": " + headers.get(key) + "\r\n";
+            }
         }
-            String str = getStatusString() + headerString + "\r\n";
-            return str.getBytes();
+        String str = getStatusString() + headerString + "\r\n";
+        return str.getBytes();
     }
 
     /**
@@ -504,35 +504,35 @@ public class Response {
     }
 
     public void send(String str) throws IOException {
-            send(str.getBytes());
+        send(str.getBytes());
     }
 
     public void send(Object obj) throws IOException {
-            Gson gson = new Gson();
-            setContenType("application/json");
-            send(gson.toJson(obj));
+        Gson gson = new Gson();
+        setContenType("application/json");
+        send(gson.toJson(obj));
     }
 
     public void send(File file) throws IOException {
-            byte[] bytes = new byte[BUFFER_SIZE];
-            FileInputStream fis = null;
-            if( file.exists() && file.isFile() ) {
-                output.write(getResponseHeaderBytes());
-                fis = new FileInputStream(file);
-                int ch = fis.read(bytes, 0, BUFFER_SIZE);
-                while (ch != -1 ) {
-                    output.write(bytes, 0, ch);
-                    ch = fis.read(bytes, 0, BUFFER_SIZE);
-                }
-                fis.close();
-            }else {
-                // file 不存在或不是一个文件
-                // TODO:这里也可以替换成一个文件
-                setStatus(404);
-                String content = "<html><body><h1>File Not Found</h1></body></html>";
-                setContent(content);
-                send(content);
+        byte[] bytes = new byte[BUFFER_SIZE];
+        FileInputStream fis = null;
+        if( file.exists() && file.isFile() ) {
+            output.write(getResponseHeaderBytes());
+            fis = new FileInputStream(file);
+            int ch = fis.read(bytes, 0, BUFFER_SIZE);
+            while (ch != -1 ) {
+                output.write(bytes, 0, ch);
+                ch = fis.read(bytes, 0, BUFFER_SIZE);
             }
+            fis.close();
+        }else {
+            // file 不存在或不是一个文件
+            // TODO:这里也可以替换成一个文件
+            setStatus(404);
+            String content = "<html><body><h1>File Not Found</h1></body></html>";
+            setContent(content);
+            send(content);
+        }
     }
 
     /**
@@ -540,15 +540,13 @@ public class Response {
      * @throws IOException
      */
     public void sendStaticResource() throws IOException {
-            Log.i(request.getUri());
-            String Uri = request.getUri();
-            if(null == Uri || Uri.equals("/") || Uri.equals("")) {
-                Uri = Server.WEB_INDEX;
-            }
+        Log.i(request.getUri());
+        String Uri = request.getUri();
+        if(null == Uri || Uri.equals("/") || Uri.equals("")) {
+            Uri = Server.WEB_INDEX;
+        }
         File file = new File(Server.WEB_ROOT, Uri);
-
-            send(file);
-
+        send(file);
     }   
 }
 ```
