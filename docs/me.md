@@ -11,7 +11,7 @@
     
     Email: 'jianchaoping@gmail.com',
 
-    WeChat: 'eGlhb3AxbmczMzAx', // Base64 Encode
+    WeChat: 'Q29saW5Ob3RGb3VuZA==', // Base64 Encode
 
     GitHub: 'https://github.com/xiaop1ng',
 
@@ -19,12 +19,3 @@
 }
 ```
 
-## 小时候
-
-- 小时候被问到长大想做什么呀？
-
-> 科学家
-
-- 现在我的职业是：
-
-> 计算机科学家
