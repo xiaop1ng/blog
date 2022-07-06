@@ -44,6 +44,15 @@ sudo swapoff -a
 sudo systemctl stop firewalld && sudo systemctl disable firewalld
 # 设置SELinux 模式为宽容模式
 sudo setenforce 0 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+# 配置 iptables 参数
+sudo cat > /etc/modules-load.d/k8s.conf <<'EOF'
+br_netfilter
+EOF
+sudo cat > /etc/sysctl.d/k8s.conf <<'EOF'
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sudo sysctl --system
 # 安装下载工具
 yum -y install wget
 # 安装依赖
