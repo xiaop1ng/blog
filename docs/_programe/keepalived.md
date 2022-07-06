@@ -9,7 +9,7 @@ tags:
   - kubernetes
 ---
 
-# keepalived
+# 使用 keepalived 实现高可用主备
 
 Keepalived 是 Linux 集群管理中保证集群高可用的一个服务软件，其功能是用来防止单点故障。
 
