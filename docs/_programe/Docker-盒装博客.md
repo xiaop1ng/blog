@@ -14,10 +14,14 @@ tags:
 [Play with Docker](https://labs.play-with-docker.com/) 官方提供的 Playground，进去点击 Start，然后 +ADD NEW INSTANCE 即可开玩。
 
 上来直接 `run`
-> docker run -it --rm -p 4000:80 ccr.ccs.tencentyun.com/dockerpracticesig/docker_practice:vuepress
+```
+docker run -it --rm -p 4000:80 ccr.ccs.tencentyun.com/dockerpracticesig/docker_practice:vuepress
+```
 
-先不要关心指令参数是什么意思（后文会提到），直接访问~（在这里只需要点击上面 `OPEN PORT` 旁边提供的按钮 `4000` 即可访达）
-> <IP>:4000
+我们先不关心指令参数是什么意思（后文会提到），直接访问~（在这里只需要点击上面 `OPEN PORT` 旁边提供的按钮 `4000` 即可访达）
+```
+<IP>:4000
+```
 
 当执行 `docker run` 来创建容器时，Docker 在后台运行的标准操作包括：
 
@@ -55,20 +59,30 @@ tags:
 
 ## 镜像相关命令
 
-### 搜索镜像
-> docker search <KEYWORD>
+**搜索镜像**
+```
+docker search <KEYWORD>
+```
 
-### 获取镜像
-> docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
+**获取镜像**
+```
+docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
+```
 
-### 推送镜像到仓库
-> docker push <镜像名称>
+**推送镜像到仓库**
+```
+docker push <镜像名称>
+```
 
-### 运行容器
-> docker run 
+**运行容器**
+```
+docker run 
+```
 
 如：
-> docker run -it --rm ubuntu:18.04 bash
+```
+docker run -it --rm ubuntu:18.04 bash
+```
 
 - `-it`：这是两个参数，一个是 -i：交互式操作，一个是 -t 终端。我们这里打算进入 bash 执行一些命令并查看返回结果，因此我们需要交互式终端。
 - `--rm`：这个参数是说容器退出后随之将其删除。默认情况下，为了排障需求，退出的容器并不会立即删除，除非手动 docker rm。我们这里只是随便执行个命令，看看结果，不需要排障和保留结果，因此使用 --rm 可以避免浪费空间。
@@ -77,49 +91,69 @@ tags:
 
 最后我们通过 `exit` 退出了这个容器。
 
-### 列出镜像
-> docker image ls
+**列出镜像**
+```
+docker image ls
+```
 
-### 删除镜像
-> docker image rm [选项] <镜像1> [<镜像2> ...]
+**删除镜像**
+```
+docker image rm [选项] <镜像1> [<镜像2> ...]
+```
 
-其中，<镜像> 可以是 镜像短 ID、镜像长 ID、镜像名 或者 镜像摘要。
+其中，`镜像` 可以是 镜像短 ID、镜像长 ID、镜像名 或者 镜像摘要。
 
 需要注意的是容器对镜像的依赖，如果存在用这个镜像启动的容器存在（即使容器没有运行）那么同样不可以删除这个镜像。容器是以镜像为基础，再加一层容器存储，组成多层存储结构去运行的。
 
-### commit 制作黑箱镜像
-> docker commit --author "jiancp" --message "edit index" ng nginx:v2
+**commit 制作黑箱镜像**
+```
+docker commit --author "jiancp" --message "edit index" ng nginx:v2
+```
 
 提交完成后使用 `docker image ls` 可以查看到 nginx:v2 这个镜像
 
 ## 容器相关命令
 
-### **启动容器**
-> docker run 
+**启动容器**
+```
+docker run 
+```
 
 示例：
-> docker run -t -i ubuntu:18.04 /bin/bash
+```
+docker run -t -i ubuntu:18.04 /bin/bash
+```
 
 其中 `-t` 选项让 Docker 分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上， `-i` 则让容器的标准输入保持打开。
 另外我们可以使用 `-d` 后台启动容器
 
-### **启动已终止的容器**
+**启动已终止的容器**
 可以利用 `docker container start` 命令，直接将一个已经终止（exited）的容器启动运行。
-> docker container start <容器ID>
+```
+docker container start <容器ID>
+```
 
-### **查看容器信息**
-> docker container ls
+**查看容器信息**
+```
+docker container ls
+```
 
-### **查看容器日志信息**
-> docker container logs <容器ID>
+**查看容器日志信息**
+```
+docker container logs <容器ID>
+```
 
-### **终止容器**
-> docker container stop <容器ID>
+**终止容器**
+```
+docker container stop <容器ID>
+```
 
-### **重新启动容器**
-> docker container restart <容器ID>
+**重新启动容器**
+```
+docker container restart <容器ID>
+```
 
-### **进入容器**
+**进入容器**
 > docker attach
 
 推荐使用
@@ -128,7 +162,7 @@ tags:
 示例：
 > docker exec -it 09c2c bash
 
-### **导出导入容器**
+**导出导入容器**
 - 导出
 
 > docker export
@@ -140,11 +174,11 @@ tags:
 
 > cat ubuntu.tar | docker import - test/ubuntu:v1.0
 
-### **删除容器**
+**删除容器**
 
 > docker container rm <容器ID>
 
-### **清理所有处于终止状态的容器**
+**清理所有处于终止状态的容器**
 
 > docker container prune
 
@@ -161,21 +195,21 @@ tags:
 
 > 注意：数据卷 的使用，类似于 Linux 下对目录或文件进行 mount，镜像中的被指定为挂载点的目录中的文件会复制到数据卷中（仅数据卷为空时会复制）。
 
-### **创建数据卷**
+**创建数据卷**
 > docker volume create my-vol
 
-### **查看所有数据卷**
+**查看所有数据卷**
 > docker volume ls
 
-### **查看指定数据卷的信息**
+**查看指定数据卷的信息**
 > docker volume inspect my-vol
 
-### **挂载数据卷**
+**挂载数据卷**
 > docker run -d -p 80:80 --name web --mount source=my-vol,target=/usr/share/nginx/html nginx
 
 在用 `docker run` 命令的时候，使用 `--mount` 标记来将 数据卷 挂载到容器里。在一次 `docker run` 中可以挂载多个 数据卷。
 
-### **查看容器信息**
+**查看容器信息**
 > docker inspect web
 
 数据卷信息在 `Mounts` 节点中
@@ -194,12 +228,12 @@ tags:
         ],
 ```
 
-### **删除数据卷**
+**删除数据卷**
 > docker volume rm my-vol
 
 被容器引用的数据卷无法被删除
 
-### **清理无主的数据卷**
+**清理无主的数据卷**
 > docker volume prune
 
 - 挂载主机目录
@@ -215,10 +249,10 @@ tags:
 
 > docker run -d -p 80:80 -p 443:443 nginx
 
-### **新建网络**
+**新建网络**
 > docker network create -d bridge my-net
 
-### **查看网络**
+**查看网络**
 > docker network ls
 
 使用 `--network` 使用网络，使用相同的网络，容器之间就可以实现网络互通
@@ -279,12 +313,14 @@ Successfully tagged nginx:v3
 ```
 
 `COPY` 指令
-> COPY [--chown=<user>:<group>] <源路径>... <目标路径>
+```
+COPY [--chown=<user>:<group>] <源路径>... <目标路径>
+```
 
-`COPY` 将从构建上下文目录中 <源路径> 的文件/目录复制到新的一层的镜像内的 <目标路径> 位置。示例：
+`COPY` 将从构建上下文目录中 `源路径` 的文件/目录复制到新的一层的镜像内的 `目标路径` 位置。示例：
 > COPY package.json /usr/src/app/
 
-`ADD` 指令和 `COPY` 指令基本一致。如果 <源路径> 为一个 tar 压缩文件的话，压缩格式为 gzip, bzip2 以及 xz 的情况下，ADD 指令将会自动解压缩这个压缩文件到 <目标路径> 去。
+`ADD` 指令和 `COPY` 指令基本一致。如果 `源路径` 为一个 tar 压缩文件的话，压缩格式为 gzip, bzip2 以及 xz 的情况下，ADD 指令将会自动解压缩这个压缩文件到 `目标路径` 去。
 
 ```
 FROM scratch
@@ -303,8 +339,10 @@ ADD ubuntu-xenial-core-cloudimg-amd64-root.tar.gz /
 > CMD ["nginx", "-g", "daemon off;"]
 
 `ENV` 指令设置环境变量
+```
 - ENV <key> <value>
 - ENV <key1>=<value1> <key2>=<value2>...
+```
 
 示例：
 ```
@@ -315,9 +353,9 @@ ENV VERSION=1.0 DEBUG=on \
 
 
 `ARG` 指令构建参数
-
-> ARG <参数名>[=<默认值>]
-
+```
+ARG <参数名>[=<默认值>]
+```
 `ARG` 指令有生效范围，只作用于下一个阶段
 
 ```
@@ -339,10 +377,14 @@ RUN set -x ; echo ${DOCKER_USERNAME}
 > VOLUME /data
 
 `EXPOSE` 声明端口
-> EXPOSE <端口1> [<端口2>...]
+```
+EXPOSE <端口1> [<端口2>...]
+```
 
 `WORKDIR` 指定工作目录
-> WORKDIR <工作目录路径>
+```
+WORKDIR <工作目录路径>
+```
 
 使用 `WORKDIR` 切换工作目录
 ```
@@ -355,12 +397,16 @@ RUN pwd
 RUN pwd 的工作目录为 /a/b/c
 
 `USER` 指定当前用户
-> USER <用户名>[:<用户组>]
+```
+USER <用户名>[:<用户组>]
+```
 
 `HEALTHCHECK` 健康检查
 
 `LABEL` 指令给镜像添加一些元数据
-> LABEL <key>=<value> <key>=<value> <key>=<value> ...
+```
+LABEL <key>=<value> <key>=<value> <key>=<value> ...
+```
 
 示例：
 > LABEL org.opencontainers.image.authors="xiaoping"
@@ -368,7 +414,9 @@ RUN pwd 的工作目录为 /a/b/c
 `SHELL` 指令指定 `RUN` `ENTRYPOINT` `CMD` 指令的 shell，Linux 中默认为 `["/bin/sh", "-c"]`
 
 `ONBUILD` 指令
-> ONBUILD <其它指令>
+```
+ONBUILD <其它指令>
+```
 
 > ONBUILD 是一个特殊的指令，它后面跟的是其它指令，比如 RUN, COPY 等，而这些指令，在当前镜像构建时并不会被执行。只有当以当前镜像为基础镜像，去构建下一级镜像的时候才会被执行。
 
