@@ -22,11 +22,20 @@ Keepalived 是 Linux 集群管理中保证集群高可用的一个服务软件�
 
 > yum install keepalived
 
-## 使用
+## 准备
 
 VIP 172.18.5.148
 Master 172.18.5.144
 Backup 172.18.5.145
+
+```sh
+# 关闭防火墙
+sudo systemctl stop firewalld && sudo systemctl disable firewalld
+# 设置SELinux 模式为宽容模式
+sudo setenforce 0 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+```
+
+## 使用
 
 ```sh
 # 修改 5.144 keepalived 配置文件
