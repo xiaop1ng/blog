@@ -7,8 +7,6 @@ tags:
   - Java
 ---
 
-# 手写 Web 服务器（二）
-
 ## 书接上回
 
 [动手写一个 Web 服务器](https://xiaop1ng.github.io/2018/03/24/%E5%8A%A8%E6%89%8B%E5%86%99%E4%B8%80%E4%B8%AA-web-%E6%9C%8D%E5%8A%A1%E5%99%A8/)的大致思路是使用  `ServerSocket`  对象的  `accept`  方法等待请求进来，有请求进来的时候该方法会返回一个  `Socket`  对象。我们使用  `Socket`  对象的输入输出流来构建请求和响应对象，从而达到响应外部请求的目的。而`ServerSocket`是基于 BIO 实现的，也就是同步阻塞，由于所有的请求都是串行的，会存在一个问题就是处理并发能力较差。为了解决该问题，我们今天使用非阻塞的 NIO 来实现 Server 部分，使用设置为非阻塞的 `ServerSocketChannel` 绑定到监听的端口上，请求流由 selector 来调度到对应的 channel 处理，同时 channel 也负责响应。

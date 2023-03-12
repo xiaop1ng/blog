@@ -7,7 +7,6 @@ tags:
   - Java
 ---
 
-# Java 函数式编程（一）—— Streams API
 
 > 注：Streams API 从 jdk8 开始支持
 

@@ -7,7 +7,6 @@ tags:
   - js
 ---
 
-# JavaScript —— 作用域（二）
 
 Javascript 语言特有的”链式作用域”结构（chain scope）
 

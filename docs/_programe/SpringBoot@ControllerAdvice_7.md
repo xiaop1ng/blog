@@ -7,7 +7,6 @@ tags:
   - SpringBoot
 ---
 
-# SpringBoot 杂记——使用 @ControllerAdvice 全局异常处理（七）
 
 ## 开门见山
 

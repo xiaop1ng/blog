@@ -7,8 +7,6 @@ tags:
   - Lua
 ---
 
-# Windows 10 环境编译 Lua 源码
-
 ## 环境准备
 
  

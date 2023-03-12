@@ -8,8 +8,6 @@ tags:
   - kubernetes
 ---
 
-# kubernetes 集群搭建
-
 **环境**
 系统：[centos7](http://isoredirect.centos.org/centos/7/isos/x86_64/)
 软件：[k3s](https://k3s.io/) 

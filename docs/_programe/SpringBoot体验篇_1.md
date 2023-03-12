@@ -7,7 +7,6 @@ tags:
   - SpringBoot
 ---
 
-# SpringBoot 开箱使用 (一)
 
 Spring Boot 是一个崭新的令人兴奋的项目，它以 Spring 的视角，致力于简化 Spring 本身。
 

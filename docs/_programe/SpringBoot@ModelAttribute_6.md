@@ -7,8 +7,6 @@ tags:
   - SpringBoot
 ---
 
-# SpringBoot 杂记——使用 @ModelAttribute 抽象 BaseController（六）
-
 ## 前言
 今天将 SpringBoot 更新到了最新的 release 版本，在一个请求方法中使用 `@RequestParam` 注解去获取参数时，然后 `@RequestParam` 的 required 的缺省值是 true 的，如果这时候我们的请求表单是一个大表单的请求，感觉写起这个参数列表不是很方便。当然我们可以将 `HttpServletRequest` 注入到请求方法中，然后手动入参，手动检查参数，这样做的好处是代码阅读起来比较方便。所以就需要一个 BaseController 来解决这些公共的问题。
 

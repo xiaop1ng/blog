@@ -7,7 +7,6 @@ tags:
   - js
 ---
 
-# JavaScript —— 闭包（三）
 
 ## 什么是闭包？
 

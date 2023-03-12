@@ -8,8 +8,6 @@ tags:
   - JWT
 ---
 
-# SpringBoot 杂记——使用 JWT 做用户认证（八）
-
 上一篇中介绍了 [JWT](https://jwt.io/ )(JSON WEB TOKEN)，本篇则写一下在工程中如何使用 [JWT](https://jwt.io/ )。
 
 

@@ -8,7 +8,6 @@ tags:
   - database
 ---
 
-# MySQL 执行计划
 
 > 注：MySQL 版本 -> `5.7.27`
 

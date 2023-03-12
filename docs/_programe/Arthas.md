@@ -6,7 +6,7 @@ title: 实用工具推荐 Arthas Tunnel
 tags:
   - Java
 ---
-## Arthas Tunnel
+## 关于Arthas Tunnel
 
 `Arthas` 是一个实用的调试工具，官方的介绍是 `Java` 应用诊断利器
 

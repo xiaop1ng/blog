@@ -7,7 +7,6 @@ tags:
   - js
 ---
 
-# JavaScript —— 实用方法
 
 - [VConsole 的使用](https://github.com/Tencent/vConsole)
 

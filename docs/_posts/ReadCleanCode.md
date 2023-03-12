@@ -7,7 +7,7 @@ tags:
   - 阅读记录
 ---
 
-# 《Clean Code》阅读笔记
+## 《Clean Code》
 
 《Clean Code》是国外大牛 _罗伯特·马丁 (Robert C. Martin)_ 的著作 ，在他的这本书中提出了一个概念：
 

@@ -7,8 +7,6 @@ tags:
   - SpringBoot
 ---
 
-# SpringBoot 端点监控工具——actuator 使用（四）
-
 ## SpringBoot actuator 
 SpringBoot actuator 是一个对应用运行状态监视的工具，actuator 为我们提供了很多可以被监视的端点（Endpoints），同时也支持我们自定端点（Endpoint）。
 

@@ -7,7 +7,6 @@ tags:
   - SpringBoot
 ---
 
-# SpringBoot 邮件工具——MailSender（五）
 
 Spring Email 抽象的核心是 MailSender 接口，用于发送邮件，使用也是非常的方便， 一共三个步骤（添加依赖，配置，发送）：
 

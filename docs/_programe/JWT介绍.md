@@ -8,7 +8,6 @@ tags:
   - JWT
 ---
 
-# JWT ( JSON WEB TOKENS) 介绍
 
 ## 官网
 

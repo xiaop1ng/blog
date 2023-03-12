@@ -2,10 +2,10 @@
 date: 2020-03-12 19:06
 author: xiaop1ng
 location: ShenZhen
-title: 树形输出目录信息
+title: Windows 树形输出目录信息
 ---
 
-# Windows 树形输出目录信息
+### 方法
 
 在 Windows 下， 命令行进入目标文件夹：
 

@@ -7,7 +7,7 @@ tags:
   - 阅读记录
 ---
 
-# 热天的阅读日志
+## 热天的阅读日志
 
 > 七月份搬家了，搬到了图书馆旁边。 
 
@@ -137,4 +137,4 @@ tags:
 
 这里想推荐一个 B 站的剪辑
 
-[10分钟中国历史年表剪辑](https://www.bilibili.com/video/av66583807?from=search&seid=8229613052924966870)
+- [10分钟中国历史年表剪辑](https://www.bilibili.com/video/av66583807?from=search&seid=8229613052924966870)

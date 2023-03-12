@@ -7,7 +7,6 @@ tags:
   - js
 ---
 
-# JavaScript —— 方法的重载（一）
 
  
 ## 方法的重载（Function overloading）

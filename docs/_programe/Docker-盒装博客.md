@@ -7,7 +7,6 @@ tags:
   - Docker
 ---
 
-# 使用 Docker 制作盒装部落格
 
 ## 先玩起来
 

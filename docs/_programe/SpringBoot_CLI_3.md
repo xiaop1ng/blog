@@ -7,7 +7,6 @@ tags:
   - SpringBoot
 ---
 
-# SpringBoot CLI
 
 CLI （Command Line Interface）， 一个可以帮助我们快速构建 SpringBoot 应用的命令行工具。
 

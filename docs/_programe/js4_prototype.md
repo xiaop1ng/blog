@@ -7,7 +7,6 @@ tags:
   - js
 ---
 
-# JavaScript —— 原型 prototype（四）
 
 ## 定义
 

@@ -5,8 +5,6 @@ location: ShenZhen
 title: 使用 Elasticsearch 构建一个笔记搜索引擎——求索
 ---
 
-# 使用 Elasticsearch 构建一个笔记搜索引擎——求索
-
 > 路漫漫其修远兮，吾将上下而求索。
 
 
